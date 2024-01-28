@@ -1,0 +1,376 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Inter&family=Roboto:wght@300&display=swap"); */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #272727;
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+
+.formulario {
+  margin: 30px auto;
+  width: 50%;
+  min-width: 300px;
+  max-width: 600px;
+  background-color: #303134;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 30px 10px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2.5rem;
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.11);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.11);
+}
+.formulario .preview {
+  width: 40%;
+  height: 40%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 100%;
+}
+.formulario .videojuego-img {
+  border-radius: 20px;
+  width: 70%;
+  height: 70%;
+}
+.formulario .title {
+  font-size: 1.2rem;
+  color: darkgrey;
+}
+.formulario .fileInput {
+  border: 2px dashed gray;
+  border-radius: 5px;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  display: block;
+  position: relative;
+}
+.formulario .fileInput:hover {
+  border-color: #004ddb;
+  background-color: #003264;
+}
+.formulario .fileInput span {
+  color: gray;
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  pointer-events: none;
+}
+.formulario .fileInput input {
+  display: block;
+  padding: 0.5rem;
+  padding-top: 2rem;
+  margin-top: 20px;
+  width: 100%;
+  height: 100%;
+}
+.formulario .fileInput input::-webkit-file-upload-button {
+  display: none;
+}
+.formulario .fileInput input::file-selector-button {
+  display: none;
+}
+.formulario .no-error {
+  position: relative;
+}
+.formulario .no-error label {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  padding: 0 4px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 18px;
+  color: #C9C9C9;
+  background-color: #303134;
+  pointer-events: none;
+  -webkit-transition: top 0.1s linear, font-size 0.1s linear;
+  transition: top 0.1s linear, font-size 0.1s linear;
+}
+.formulario .no-error input,
+.formulario .no-error textarea {
+  width: 100%;
+  overflow: scroll-y;
+  resize: none;
+  text-wrap: wrap;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 18px;
+  padding: 5px 16px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  background-color: #303134;
+  outline: 1px solid #c9c9c9;
+}
+.formulario .no-error input:hover,
+.formulario .no-error textarea:hover {
+  outline: 1px solid #004ddb;
+  color: #004ddb;
+}
+.formulario .no-error input:focus,
+.formulario .no-error textarea:focus {
+  outline: 2px solid #004ddb;
+  color: white;
+}
+.formulario .no-error input:hover + label,
+.formulario .no-error textarea:hover + label {
+  color: #004ddb;
+}
+.formulario .no-error input:focus + label,
+.formulario .no-error textarea:focus + label {
+  color: #004ddb;
+  top: 0;
+  font-size: 12px;
+  background-color: #303134;
+}
+.formulario .no-error .suggestion {
+  max-width: 90%;
+  position: absolute;
+  bottom: -20px;
+  left: 16px;
+  font-size: 12px;
+  color: #C9C9C9;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.formulario .no-error .suggestion:after {
+  max-width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: #232325;
+  border-radius: 5px;
+  color: #fff;
+  opacity: 0;
+  padding: 6px 12px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  visibility: hidden;
+  white-space: wrap;
+}
+.formulario .no-error .suggestion:hover {
+  overflow: visible;
+  visibility: hidden;
+}
+.formulario .no-error .suggestion:hover:after {
+  opacity: 1;
+  z-index: 1;
+  visibility: visible;
+  text-align: center;
+}
+.formulario .no-error.is-filled input,
+.formulario .no-error.is-filled textarea {
+  color: white;
+}
+.formulario .no-error.is-filled label {
+  top: 0;
+  font-size: 12px;
+  background-color: #303134;
+}
+.formulario .error {
+  position: relative;
+}
+.formulario .error label {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  padding: 0 4px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 18px;
+  color: red;
+  background-color: #303134;
+  pointer-events: none;
+  -webkit-transition: top 0.1s linear, font-size 0.1s linear;
+  transition: top 0.1s linear, font-size 0.1s linear;
+}
+.formulario .error input,
+.formulario .error textarea {
+  width: 100%;
+  overflow: scroll-y;
+  text-wrap: wrap;
+  resize: none;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 18px;
+  padding: 5px 16px;
+  border: none;
+  border-radius: 4px;
+  color: red;
+  background-color: #303134;
+  outline: 1px solid red;
+}
+.formulario .error input:hover,
+.formulario .error textarea:hover {
+  outline: 1px solid red;
+  color: red;
+}
+.formulario .error input:focus,
+.formulario .error textarea:focus {
+  outline: 2px solid red;
+  color: red;
+}
+.formulario .error input:hover + label,
+.formulario .error textarea:hover + label {
+  color: red;
+}
+.formulario .error input:focus + label,
+.formulario .error textarea:focus + label {
+  color: red;
+  top: 0;
+  font-size: 12px;
+  background-color: #303134;
+}
+.formulario .error .suggestion {
+  max-width: 90%;
+  position: absolute;
+  bottom: -20px;
+  left: 16px;
+  font-size: 12px;
+  color: red;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.formulario .error .suggestion:after {
+  max-width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: #382b2b;
+  border-radius: 5px;
+  color: #fff;
+  opacity: 0;
+  padding: 6px 12px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  visibility: hidden;
+  white-space: wrap;
+}
+.formulario .error .suggestion:hover {
+  overflow: visible;
+  visibility: hidden;
+}
+.formulario .error .suggestion:hover:after {
+  opacity: 1;
+  z-index: 1;
+  visibility: visible;
+  text-align: center;
+}
+.formulario .error.is-filled input,
+.formulario .error.is-filled textarea {
+  color: white;
+}
+.formulario .error.is-filled label {
+  top: 0;
+  font-size: 12px;
+  background-color: #303134;
+}
+.formulario .checkbox {
+  color: #c9c9c9;
+}
+.formulario .btn-enviar {
+  color: white;
+  background-color: #003087;
+  width: 66.5%;
+  padding: 10px 5px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+}
+.formulario .btn-enviar:hover {
+  background-color: rgb(0, 50, 100);
+  color: #9dbcff;
+}
+
+
+
+
+
+input[type="date"] {
+  display:block;
+  position:relative;
+  padding:1rem 3.5rem 1rem 0.75rem;
+  
+  font-size:1rem;
+  font-family:monospace;
+  
+  border:1px solid #c9c9c9;
+  border-radius:0.25rem;
+  color: #c9c9c9;
+  background:
+  #303134
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='22' viewBox='0 0 20 22'%3E%3Cg fill='none' fill-rule='evenodd' stroke='%23688EBB' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' transform='translate(1 1)'%3E%3Crect width='18' height='18' y='2' rx='2'/%3E%3Cpath d='M13 0L13 4M5 0L5 4M0 8L18 8'/%3E%3C/g%3E%3C/svg%3E")
+    right 1rem
+    center
+    no-repeat;
+  
+  cursor:pointer;
+}
+input[type="date"]:focus {
+  outline:none;
+  border-color:#004ddb;
+  box-shadow:0 0 0 0.25rem rgba(0, 120, 250, 0.1);
+}
+
+::-webkit-datetime-edit {}
+::-webkit-datetime-edit-fields-wrapper {}
+::-webkit-datetime-edit-month-field:hover,
+::-webkit-datetime-edit-day-field:hover,
+::-webkit-datetime-edit-year-field:hover {
+  background:rgba(0, 120, 250, 0.1);
+}
+::-webkit-datetime-edit-text {
+  opacity:0;
+}
+::-webkit-clear-button,
+::-webkit-inner-spin-button {
+  display:none;
+}
+::-webkit-calendar-picker-indicator {
+  position:absolute;
+  width:2.5rem;
+  height:100%;
+  top:0;
+  right:0;
+  bottom:0;
+  
+  opacity:0;
+  cursor:pointer;
+  
+  color:rgba(0, 120, 250, 1);
+  background:rgba(0, 120, 250, 1);
+ 
+}
+
+input[type="date"]:hover::-webkit-calendar-picker-indicator { opacity:0.05; }
+input[type="date"]:hover::-webkit-calendar-picker-indicator:hover { opacity:0.15; }

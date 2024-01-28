@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/inicio.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/registro.css') }}"
+    />
+    <title>Document</title>
+</head>
+
+<body>
+    <form class="formulario" action="guardar-nuevo-videojuego" method="post" enctype="multipart/form-data">
+        <h2>Registrar Videojuego</h2>
+
+        <img class="preview videojuego-img" id="preview-img" src="/static/img/default_game.png" alt="Imagen por defecto">
+
+        <label class="fileInput">
+            <span>Foto Portada: Selecciona o arrastra una Foto</span>
+            <input type="file" name="fotoPortada" id="fotoPortada" />
+        </label>
+
+        <div class="input-box no-error">
+            <input type="text" id="nombre" name="nombre" required minlength="2" maxlength="20">
+            <label for="nombre">Nombre</label>
+        </div>
+
+        <div class="textarea-box no-error">
+            <textarea id="descripcion" name="descripcion" required minlength="2" maxlength="200"></textarea>
+            <label for="descripcion">Descripcion</label>
+        </div>
+
+        <div class="input-box no-error">
+            <input type="number" step=".01" id="precio" name="precio" required pattern="[0-9]+(,[0-9])?" />
+            <label for="precio">Precio</label>
+        </div>
+
+        <div class="input-box no-error">
+            <input type="text" step=".01" id="plataforma" name="plataforma" required minlength="2" maxlength="30" />
+            <label for="plataforma">Plataforma</label>
+        </div>
+
+        <div class="input-box no-error">
+            <input type="text" step=".01" id="genero" name="genero" required minlength="2" maxlength="30" />
+            <label for="genero">Genero</label>
+        </div>
+
+        <div class="input-box no-error">
+            <input type="text" step=".01" id="desarrollador" name="desarrollador" required minlength="2" maxlength="30" />
+            <label for="desarrollador">Desarrollador</label>
+        </div>
+
+        <input type="date" value="2017-01-01" min="2005-01-01" id="fecha_lanzamiento" name="fecha_lanzamiento" />
+
+        <input class="btn-enviar" type="submit" />
+    </form>
+
+    <script src="{{ url_for('static', filename='js/image_preview.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/formulario_inputs.js') }}"></script>
+</body>
+
+</html>

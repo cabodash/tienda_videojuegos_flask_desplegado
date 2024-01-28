@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/inicio.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/listado_pedidos.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {% include "menu.html"%}
+
+    <div class="cont-listado">
+
+        <div>
+            <h2>Pedidos realizados en la tienda con angular</h2>
+        </div>
+        <div class="contenedor-pedidos">
+            <!-- El bucle 'for' itera sobre cada 'pedido' en la lista 'pedidos'. -->
+            <!-- La condición 'if' se usa para verificar si el 'pedido' actual es el primero o si su 'id' es diferente del 'id' del 'pedido' anterior. -->
+            <!-- Si es el primer 'pedido' o su 'id' es diferente del anterior, se inicia un nuevo div 'pedido'. -->
+            
+            
+            {% for pedido in pedidos %}
+                {% if loop.first or pedido.id != pedidos[loop.index0 - 1].id %} <!-- Si es el primer pedido o el id del pedido actual es diferente a el id pedido anterior-->
+                    {% if not loop.first %}
+                        </div> <!-- Si no es el primer loop, al tener un id_pedido distinto hay que cerrar el div.pedido anterior -->
+                    {% endif %}
+                    <div class="pedido">
+                        <div class="cont-datos-usuario" style="margin: 10px;">
+                            <p>Nombre: {{ pedido.nombre_pedido }}</p>
+                            <p>Apellidos:  {{ pedido.apellidos }} </p>
+                            <p>Direccion:  {{ pedido.direccion }}</p>
+                            <p>Nº tarjeta: {{ pedido.tarjeta }} </p>
+                            <p>Comentario: {{ pedido.comentario }} </p>
+                        </div>
+                {% endif %}
+                <div class="item-producto-pedido">
+                    <p>Nombre: {{ pedido.nombre_videojuego }}</p>
+                    <p>Precio: {{ pedido.precio }}€</p>
+                    <p>Descripcion: {{ pedido.descripcion }}</p>
+                </div>
+            {% endfor %}
+            </div> <!-- This is the final closing div outside the loop, necessary to maintain the page structure -->
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

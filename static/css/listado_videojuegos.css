@@ -1,0 +1,82 @@
+/* You can add global styles to this file, and also import other style files */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #272727;
+    color: #FFF;
+    font-family: "Roboto", sans-serif;
+}
+
+.btn-primary {
+    position: relative;
+    white-space: nowrap;
+    background-color: #0039a3;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    -webkit-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+}
+
+.btn-primary:hover {
+    background-color: rgb(0, 50, 100);
+    color: #9dbcff;
+    -webkit-transform: translateY(-3px);
+    transform: translateY(-3px);
+    -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+h2{
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 20px auto;
+}
+
+/* Listado administracion */
+.cont-listado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 30px;
+}
+
+.contenedor-items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.item {
+    background-color: #303134;
+    display: flex;
+    width: 300px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 20px 10px 10px;
+    border-radius: 10px;
+}
+
+.imagen-item {
+    width: 250px;
+    aspect-ratio: 19 / 11;
+    border-radius: 10px;
+    object-fit: cover;
+}

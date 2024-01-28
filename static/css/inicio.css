@@ -1,0 +1,72 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #272727;
+    color: #FFF;
+    font-family: "Roboto", sans-serif;
+}
+
+.btn-primary {
+    position: relative;
+    white-space: nowrap;
+    background-color: #0039a3;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    -webkit-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+}
+
+.btn-primary:hover {
+    background-color: rgb(0, 50, 100);
+    color: #9dbcff;
+    -webkit-transform: translateY(-3px);
+    transform: translateY(-3px);
+    -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 1em;
+    background-color: #0039a3;
+    padding: 10px;
+}
+.last{
+    display: flex;
+    justify-content: end;
+    flex: 1;
+}
+
+a {
+    color: #0039a3;
+}
+
+a:hover {
+    color: #0059ff;
+}
+
+a:active {
+    color: #3a79ec;
+}
+
+.item p {
+    width: 90%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
